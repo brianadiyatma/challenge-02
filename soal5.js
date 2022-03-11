@@ -1,4 +1,4 @@
-function getSplitName(personName) {
+const getSplitName = (personName) => {
   if (typeof personName === "string") {
     let nameArr = personName.split(" ");
     if (nameArr.length === 3) {
@@ -25,7 +25,7 @@ function getSplitName(personName) {
   } else {
     return "ERROR : Tipe Data Hanya String";
   }
-}
+};
 
 console.log(getSplitName("Aldi Daniela Pernata"));
 console.log(getSplitName("Dwi Kuncoro"));

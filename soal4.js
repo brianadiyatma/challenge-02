@@ -1,6 +1,5 @@
 const isValidPassword = (password) => {
   let reg = new RegExp(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/);
-  //mencari pola dari string//
   if (typeof password === "string") {
     if (reg.test(password)) {
       return true;

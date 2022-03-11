@@ -10,6 +10,8 @@ const checkTypeNumber = (givenNumber) => {
     typeof givenNumber !== "string"
   ) {
     return "GANJIL";
+  } else if (givenNumber === undefined) {
+    return "ERROR : Broo where is the parameter";
   } else {
     return "Error: Invalid data type";
   }

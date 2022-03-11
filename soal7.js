@@ -1,51 +1,40 @@
-const dataPenjualanNovel = [
+const dataPenjualanPakAldi = [
   {
-    idProduct: "BOOK002421",
-    namaProduk: "Pulang - Pergi",
-    penulis: "Tere Liye",
-    hargaBeli: 60000,
-    hargaJual: 86000,
-    totalTerjual: 150,
-    sisaStok: 17,
+    namaProduct: "Sepatu Futsal Nike Vapor Academy 8",
+    hargaSatuan: 760000,
+    kategori: "Sepatu Sport",
+    totalTerjual: 90,
   },
   {
-    idProduct: "BOOK002351",
-    namaProduk: "Selamat Tinggal",
-    penulis: "Tere Liye",
-    hargaBeli: 75000,
-    hargaJual: 103000,
-    totalTerjual: 171,
-    sisaStok: 20,
+    namaProduct: "Sepatu Warrior Tristan Black Brown High",
+    hargaSatuan: 960000,
+    kategori: "Sepatu Sneaker",
+    totalTerjual: 37,
   },
   {
-    idProduct: "BOOK002941",
-    namaProduk: "Garis Waktu",
-    penulis: "Fiersa Besari",
-    hargaBeli: 67000,
-    hargaJual: 99000,
-    totalTerjual: 213,
-    sisaStok: 5,
+    namaProduct: "Sepatu Warrior Tristan Maroon High ",
+    kategori: "Sepatu Sneaker",
+    hargaSatuan: 360000,
+    totalTerjual: 90,
   },
   {
-    idProduct: "BOOK002941",
-    namaProduk: "Laskar Pelangi",
-    penulis: "Andrea Hirata",
-    hargaBeli: 55000,
-    hargaJual: 68000,
-    totalTerjual: 20,
-    sisaStok: 56,
+    namaProduct: "Sepatu Warrior Rainbow Tosca Corduroy",
+    hargaSatuan: 120000,
+    kategori: "Sepatu Sneaker",
+    totalTerjual: 90,
   },
 ];
-
 const hitungTotalPenjualan = (dataPenjualan) => {
-  if (typeof dataPenjualan === "object") {
-    let jumlahPenjualanTotal = dataPenjualan
-      .map((item) => item.sisaStok)
-      .reduce((prev, curr) => prev + curr, 0);
-    return jumlahPenjualanTotal;
-  } else {
-    return "Tipe Data Tidak Benar";
-  }
-};
+  let jumlahPenjualanTotal = 0;
 
-console.log(hitungTotalPenjualan(dataPenjualanNovel));
+  if (Array.isArray(dataPenjualan)) {
+    for (i = 0; i < dataPenjualan.length; i++) {
+      jumlahPenjualanTotal += dataPenjualan[i].totalTerjual;
+    }
+  } else {
+    return "ERROR: Tipe data bukan array";
+  }
+
+  return jumlahPenjualanTotal;
+};
+console.log(hitungTotalPenjualan(dataPenjualanPakAldi));
